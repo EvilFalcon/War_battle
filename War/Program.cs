@@ -7,6 +7,7 @@ namespace War
     {
         static void Main()
         {
+            Console.Title = "War Battle";
         }
     }
 
