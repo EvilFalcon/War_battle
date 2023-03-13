@@ -3,9 +3,15 @@ using War.Common.Damage;
 
 namespace War.Domain.Model.Army;
 
-public class Army:IAttackComponent
+public class Army:IAttackComponent,IDamageble
 {
+    private readonly string _name;
     private readonly List<IAttacker> _components = new List<IAttacker>();
+
+    public Army(string name)
+    {
+        _name = name;
+    }
     
     public void Attack(IDamageble damageble)
     {
@@ -22,6 +28,10 @@ public class Army:IAttackComponent
             _components.Add(component);
         }
     }
-    
+
+    public void TakeDamage(int damage)
+    {
+        Console.WriteLine($"армия  {_name} получила урон {damage} ");
+    }
 }
 

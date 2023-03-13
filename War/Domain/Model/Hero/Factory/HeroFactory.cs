@@ -2,8 +2,7 @@
 
 namespace War.Domain.Model.Hero.Factory;
 
-public class HeroFactory:IFactory<IHero>
+public class HeroFactory
 {
-    public IHero Create()=> new Hero();
-    
+    public Hero Create(int health,int armor) => new Hero(health, armor);
 }

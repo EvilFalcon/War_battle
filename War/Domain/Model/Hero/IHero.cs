@@ -5,7 +5,9 @@ using War.Domain.Model.Weapon;
 
 namespace War.Domain.Model.Hero;
 
-public interface IHero: IDamageble,IAttacker
+public interface IHero: IDamageble,IAttacker,IHealable
 {
+ event Action? Daed;
+ 
  void Add(IWeapon weapon);
 }

@@ -4,5 +4,5 @@ namespace War.Domain.Сleric;
 
 public interface ICleric
 {
-    void Heal(IHealable healable);
+    void Heal(IHealable target);
 }

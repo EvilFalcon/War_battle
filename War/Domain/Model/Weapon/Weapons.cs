@@ -7,11 +7,8 @@ public class Weapons : IWeapon
 {
     private readonly int _damage;
 
-    public Weapons(int damage)=>
-        _damage = damage;
-    
-    
-    public void Attack(IDamageble damageble)=>
-        damageble.TakeDamage(_damage);
-    
+    public Weapons(int damage) => _damage = damage;
+
+
+    public void Attack(IDamageble damageble) => damageble.TakeDamage(_damage);
 }

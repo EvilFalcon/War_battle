@@ -1,29 +1,14 @@
 ﻿using War.Common.Damage;
 using War.Domain.Model.Hero;
-using War.Domain.Model.Weapon;
 
 namespace War.Domain.Сleric;
 
-public class Cleric:IHero,ICleric
+public class Cleric:Hero,ICleric
 {
-    public void TakeDamage(int damage)
-    {
-        throw new NotImplementedException();
-    }
+    private readonly int _healPoints;
 
-    public void Attack(IDamageble damageble)
-    {
-        throw new NotImplementedException();
-    }
 
-    public void Add(IWeapon weapon)
-    {
-        throw new NotImplementedException();
-    }
+    public Cleric(int health,int armor,int healPoints) : base(health,armor) => _healPoints = healPoints;
 
-    public void Heal(IHealable healable)
-    {
-        throw new NotImplementedException();
-    }
-
+    public void Heal(IHealable target) => target.Heal(_healPoints);
 }
